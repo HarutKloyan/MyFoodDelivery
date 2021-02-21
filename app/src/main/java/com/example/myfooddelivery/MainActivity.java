@@ -1,24 +1,29 @@
 package com.example.myfooddelivery;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 
+import com.example.myfooddelivery.MenuItemsActivies.Credit_cardActivity;
+import com.example.myfooddelivery.MenuItemsActivies.NotificationsActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.List;
 
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     RecyclerView popularRecyclerView, recommendedRecyclerView, allMenuRecyclerView;
 
     PopularAdapter popularAdapter;
@@ -37,13 +42,27 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.menu_nav_view);
         toolbar = findViewById(R.id.toolbar);
 
-
+        navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.notifications);
     }
-    public void OnClickMenu(View view) {
-        startActivity(new Intent(this, ActivityMenu.class));
+
+    @Override
+    public void onBackPressed() {
+
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+
+        else
+
+        {
+            super.onBackPressed();
+        }
     }
 
     private void  getPopularData(List<Popular> popularList){
@@ -78,5 +97,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
+        switch (menuItem.getItemId()){
+            case R.id.notifications:
+                Intent intent = new Intent(this, NotificationsActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.credit_card:
+                Intent intent1 = new Intent(this, Credit_cardActivity.class);
+                startActivity(intent1);
+                break;
+
+        }
+
+        return true;
+
+    }
 }
