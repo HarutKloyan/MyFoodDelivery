@@ -21,8 +21,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/bungee1"
         android:text="Привет, Добро пожаловать обратно"
-        android:textSize="40sp"
-        android:textColor="@color/red"/>
+        android:textColor="@color/red"
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/sign_name"
@@ -42,12 +42,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/username"
-            android:hint="Логин"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:hint="asdasd" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -55,14 +55,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/password"
-            android:hint="Пароль"
-            app:passwordToggleEnabled="true"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                app:passwordToggleEnabled="true"
+                android:hint="Пароль"
+                android:text="asdsa"
                 android:layout_marginBottom="5dp"
                 android:inputType="textPassword"/>
 
