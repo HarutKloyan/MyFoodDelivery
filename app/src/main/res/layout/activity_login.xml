@@ -4,22 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:orientation="vertical"
     android:background="#fff"
-    android:padding="20dp">
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/logoImage"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/pizza_logo"/>
+        android:transitionName="logo_image"
+        android:src="@drawable/pizza_logo" />
 
     <TextView
-        android:id="@+id/logo_name"
+        android:id="@+id/welcome_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/bungee1"
+        android:fontFamily="@font/bangers_1"
         android:text="Привет, Добро пожаловать обратно"
         android:textColor="@color/red"
         android:textSize="40sp" />
@@ -28,8 +29,11 @@
         android:id="@+id/sign_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/antic"
         android:text="Войдите, чтобы продолжить"
-        android:textSize="18sp"/>
+        android:textColor="#000000"
+        android:textSize="18sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,32 +43,33 @@
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/username"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/login_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="asdasd" />
+                android:hint="@string/Login" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/password"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            app:passwordToggleEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                app:passwordToggleEnabled="true"
-                android:hint="Пароль"
-                android:text="asdsa"
                 android:layout_marginBottom="5dp"
+                android:hint="@string/Password"
                 android:inputType="textPassword"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -75,32 +80,35 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/registration_btn"
                 android:layout_width="185dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:background="@color/white"
                 android:elevation="0dp"
-                android:text="Регистрация"/>
+                android:text="Регистрация" />
 
             <Button
+                android:id="@+id/passw_forgot_btn"
                 android:layout_width="185dp"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:text="Забыли пароль?"
-                android:textColor="@color/black"
                 android:layout_gravity="right"
+                android:layout_margin="5dp"
+                android:background="@color/white"
                 android:elevation="0dp"
-                android:layout_margin="5dp"/>
+                android:text="Забыли пароль?"
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
         <Button
+            android:id="@+id/enter_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Войти"
-            android:background="@color/red"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:background="@color/red"
+            android:text="Войти" />
 
     </LinearLayout>
 

@@ -10,4 +10,8 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="todo">TODO</string>
+    <string name="la_piccola_italia">La piccola Italia</string>
+    <string name="Login">Логин</string>
+    <string name="Password">Пароль</string>
 </resources>

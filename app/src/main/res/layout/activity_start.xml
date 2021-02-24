@@ -8,45 +8,52 @@
     tools:context=".StartActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logoImage_start"
         android:layout_width="0dp"
         android:layout_height="350dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="10dp"
         android:src="@drawable/pizza_logo"
+        android:transitionName="logo_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:contentDescription="@string/todo" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/logo_name_start"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/bangers"
-        android:text="La piccola Italia"
+        android:text="@string/la_piccola_italia"
         android:textAlignment="center"
+        android:transitionName="logo_txt"
         android:textColor="#FFFFFF"
         android:textSize="45sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/logoImage_start" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/slogan_name_start"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Маленькая Италия для вас!"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/bangers_1"
+        android:text="Маленькая Италия всегда с вами!"
         android:textAlignment="center"
+        android:transitionName="slogan_txt"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/logo_name_start" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
