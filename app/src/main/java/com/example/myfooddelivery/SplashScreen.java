@@ -8,7 +8,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-public class SplashScreenActivity extends AppCompatActivity {
+public class SplashScreen extends AppCompatActivity {
 
     private Animation logoAnim;
     private ImageView logoImage;

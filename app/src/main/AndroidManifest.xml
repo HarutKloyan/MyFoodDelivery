@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFoodDelivery">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".SignUp"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".SplashScreenActivity" />
+        <activity android:name=".SplashScreen" />
         <activity android:name=".MenuItemsActivies.AddressActivity" />
         <activity android:name=".MenuItemsActivies.HistoryActivity" />
         <activity android:name=".MenuItemsActivies.Credit_cardActivity" />

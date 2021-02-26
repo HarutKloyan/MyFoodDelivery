@@ -14,6 +14,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
+
 public class StartActivity extends AppCompatActivity {
 
     private static int SPLASH_SCREEN = 2000;
@@ -41,18 +43,15 @@ public class StartActivity extends AppCompatActivity {
         logo.setAnimation(bottomAnim);
         slogan.setAnimation(bottomAnim);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(StartActivity.this,LoginActivity.class);
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(StartActivity.this,LoginActivity.class);
 
-                Pair[] pairs = new Pair[2];
-                pairs[0] = new Pair<View,String>(image, "logo_image");
-                pairs[1] = new Pair<View,String>(logo, "logo_txt");
+            Pair[] pairs = new Pair[2];
+            pairs[0] = new Pair<View,String>(image, "logo_image");
+            pairs[1] = new Pair<View,String>(logo, "logo_txt");
 
-                ActivityOptions options = new ActivityOptions.makeSceneTransitionAnimation(StartActivity.this, pairs);
-                startActivity(intent, options.toBundle());
-            }
+            ActivityOptions options = new ActivityOptions.makeSceneTransitionAnimation(StartActivity.this, pairs);
+            startActivity(intent, options.toBundle());
         },SPLASH_SCREEN);
     }
 }
