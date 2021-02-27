@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Pair;
@@ -50,8 +51,13 @@ public class StartActivity extends AppCompatActivity {
             pairs[0] = new Pair<View,String>(image, "logo_image");
             pairs[1] = new Pair<View,String>(logo, "logo_txt");
 
-            ActivityOptions options = new ActivityOptions.makeSceneTransitionAnimation(StartActivity.this, pairs);
-            startActivity(intent, options.toBundle());
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                ActivityOptions options = new ActivityOptions.makeSceneTransitionAnimation(StartActivity.this, pairs);
+                startActivity(intent, options.toBundle());
+
+            } else {
+
+            }
         },SPLASH_SCREEN);
     }
 }

@@ -17,7 +17,8 @@
         android:src="@drawable/pizza_logo_" />
 
     <TextView
-        android:id="@+id/welcome_name"
+        android:id="@+id/logo_name"
+        android:transitionName="logo_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bangers_1"
@@ -26,7 +27,8 @@
         android:textSize="40sp" />
 
     <TextView
-        android:id="@+id/sign_name"
+        android:id="@+id/slogan_name"
+        android:transitionName="logo_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -44,24 +46,28 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/username"
+            android:transitionName="username_tran"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_txt"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/Login" />
+                android:hint="Логин"
+                android:transitionName="login_txt" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password"
-            app:passwordToggleEnabled="true"
+            android:transitionName="password_tran"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password_txt"
@@ -70,7 +76,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:hint="@string/Password"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -81,33 +87,37 @@
 
             <Button
                 android:id="@+id/registration_btn"
+                android:transitionName="registration_btn_tran"
                 android:layout_width="185dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:background="@color/white"
+                android:background="@drawable/cart_bg"
+                android:textColor="@color/white"
                 android:elevation="0dp"
                 android:text="Регистрация" />
 
             <Button
-                android:id="@+id/passw_forgot_btn"
+                android:id="@+id/password_forgot_btn"
                 android:layout_width="185dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:layout_margin="5dp"
-                android:background="@color/white"
+                android:background="@drawable/cart_bg"
                 android:elevation="0dp"
                 android:text="Забыли пароль?"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
         <Button
             android:id="@+id/enter_btn"
+            android:transitionName="enter_btn_tran"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:background="@color/red"
+            android:background="@drawable/cart_bg"
+            android:textColor="@color/white"
             android:text="Войти" />
 
     </LinearLayout>
