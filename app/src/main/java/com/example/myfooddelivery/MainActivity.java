@@ -37,9 +37,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //կորցնել toolbar-ը
-//        getSupportActionBar().hide();
-
+//      getSupportActionBar().hide();
+        Init();
+    }
+    private void Init(){
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.menu_nav_view);
         toolbar = findViewById(R.id.toolbar);
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.notifications);
+
     }
 
     @Override

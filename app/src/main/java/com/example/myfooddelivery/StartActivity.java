@@ -30,7 +30,26 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_start);
+        Init();
 
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(StartActivity.this,LoginActivity.class);
+
+            Pair[] pairs = new Pair[2];
+            pairs[0] = new Pair<View,String>(image, "logo_image");
+            pairs[1] = new Pair<View,String>(logo, "logo_txt");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(StartActivity.this, pairs);
+                startActivity(intent, options.toBundle());
+
+            } else {
+
+            }
+        },SPLASH_SCREEN);
+    }
+
+    private void Init(){
         // Animation
         topAnim = AnimationUtils.loadAnimation(this,R.anim.top_anim);
         bottomAnim = AnimationUtils.loadAnimation(this,R.anim.bottom_anim);
@@ -44,20 +63,5 @@ public class StartActivity extends AppCompatActivity {
         logo.setAnimation(bottomAnim);
         slogan.setAnimation(bottomAnim);
 
-        new Handler().postDelayed(() -> {
-            Intent intent = new Intent(StartActivity.this,LoginActivity.class);
-
-            Pair[] pairs = new Pair[2];
-            pairs[0] = new Pair<View,String>(image, "logo_image");
-            pairs[1] = new Pair<View,String>(logo, "logo_txt");
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                ActivityOptions options = new ActivityOptions.makeSceneTransitionAnimation(StartActivity.this, pairs);
-                startActivity(intent, options.toBundle());
-
-            } else {
-
-            }
-        },SPLASH_SCREEN);
     }
 }

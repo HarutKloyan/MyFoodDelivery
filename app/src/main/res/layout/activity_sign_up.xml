@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignUp"
+    android:background="@color/white"
     android:orientation="vertical"
     android:padding="20dp">
 
@@ -17,11 +18,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        android:fontFamily="@font/antic"
         android:text="Регистрация"
-        android:transitionName="logo_txt"
+        android:textColor="#000000"
         android:textSize="40sp"
-        android:fontFamily="@font/bungee"
-        android:layout_marginTop="-20dp"/>
+        android:transitionName="logo_txt" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -40,7 +42,7 @@
         android:layout_marginBottom="20dp">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/name_su"
+            android:id="@+id/reg_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Полное имя"
@@ -54,7 +56,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/username_su"
+            android:id="@+id/reg_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Имя пользователя"
@@ -70,7 +72,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/email_su"
+            android:id="@+id/reg_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="E-mail"
@@ -84,7 +86,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/phone_number_su"
+            android:id="@+id/reg_phone_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Номер телефона"
@@ -98,7 +100,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/password_su"
+            android:id="@+id/reg_password"
             android:transitionName="password_tran"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -116,10 +118,11 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/registration_btn_su"
+        android:id="@+id/reg_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/cart_bg"
+        android:onClick="onClickReg"
         android:text="Зарегистрироваться"
         android:textColor="@color/white"
         android:transitionName="enter_btn_tran" />
