@@ -3,9 +3,11 @@ package com.example.myfooddelivery;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
@@ -46,6 +48,11 @@ public class SignUp extends AppCompatActivity {
         String password = regPassword.getEditText().getText().toString();
 
         UserHelper helper = new UserHelper(name, username, email, phoneNumber, password);
+        if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(username) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(phoneNumber) && !TextUtils.isEmpty(password))
+        {
+            reference.push().setValue(helper);
+            Toast.makeText(this, "Есть пустое поле", Toast.LENGTH_SHORT).show();
+        }
 
         reference.setValue(helper);
 
