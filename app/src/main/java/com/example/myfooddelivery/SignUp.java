@@ -35,6 +35,16 @@ public class SignUp extends AppCompatActivity {
         regPassword = findViewById(R.id.reg_password);
         regBtn = findViewById(R.id.reg_btn);
     }
+    private boolean validateName(){
+        String val = regName.getEditText().getText().toString();
+        if (val.isEmpty()){
+            regName.setError("Поле не может быть пустым");
+        }
+        else
+        {
+
+        }
+    }
 
     public void onClickReg(View view) {
         rootNode = FirebaseDatabase.getInstance();

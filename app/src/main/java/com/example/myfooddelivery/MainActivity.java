@@ -12,11 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 
+import com.example.myfooddelivery.MenuItemsActivies.AddressActivity;
 import com.example.myfooddelivery.MenuItemsActivies.Credit_cardActivity;
+import com.example.myfooddelivery.MenuItemsActivies.HistoryActivity;
 import com.example.myfooddelivery.MenuItemsActivies.NotificationsActivity;
+import com.example.myfooddelivery.MenuItemsActivies.SupportActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.List;
@@ -112,6 +114,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.credit_card:
                 Intent intent1 = new Intent(this, Credit_cardActivity.class);
                 startActivity(intent1);
+                break;
+            case R.id.purchase_history:
+                Intent intent2 = new Intent(this, HistoryActivity.class);
+                startActivity(intent2);
+                break;
+            case R.id.address:
+                Intent intent3 = new Intent(this, AddressActivity.class);
+                startActivity(intent3);
+                break;
+            case R.id.support:
+                Intent intent4 = new Intent(this, SupportActivity.class);
+                startActivity(intent4);
+                break;
+            case R.id.settings:
+                Intent intent5 = new Intent(this, ProfileSettingsActivity.class);
+                startActivity(intent5);
                 break;
 
         }

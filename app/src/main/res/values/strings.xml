@@ -14,4 +14,5 @@
     <string name="la_piccola_italia">La piccola Italia</string>
     <string name="Login">Логин</string>
     <string name="Password">Пароль</string>
+    <string name="todo">TODO</string>
 </resources>
