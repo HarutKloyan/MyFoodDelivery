@@ -18,6 +18,7 @@ import com.example.myfooddelivery.MenuItemsActivies.AddressActivity;
 import com.example.myfooddelivery.MenuItemsActivies.Credit_cardActivity;
 import com.example.myfooddelivery.MenuItemsActivies.HistoryActivity;
 import com.example.myfooddelivery.MenuItemsActivies.NotificationsActivity;
+import com.example.myfooddelivery.MenuItemsActivies.ProfileSettingsActivity;
 import com.example.myfooddelivery.MenuItemsActivies.SupportActivity;
 import com.google.android.material.navigation.NavigationView;
 
